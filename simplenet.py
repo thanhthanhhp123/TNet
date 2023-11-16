@@ -376,8 +376,8 @@ class SimpleNet(torch.nn.Module):
             pixel_scores = metrics.compute_pixelwise_retrieval_metrics(
                 norm_segmentations, masks_gt)
                 # segmentations, masks_gt
-            full_pixel_auroc = pixel_scores["auroc"]
-
+            # full_pixel_auroc = pixel_scores["auroc"]
+            full_pixel_auroc = -1
             pro = metrics.compute_pro(np.squeeze(np.array(masks_gt)), 
                                             norm_segmentations)
         else:
