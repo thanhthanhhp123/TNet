@@ -53,7 +53,7 @@ class CMIDataset(torch.utils.data.Dataset):
         ]
         self.transform_mask = transforms.Compose(self.transform_mask)
 
-        self.image_size = (1, 50, 87)
+        self.image_size = (3, image_size, image_size)
         self.imagepaths_per_class, self.data_to_iterate = self.get_image_data()
     def __len__(self):
         return len(self.data_to_iterate)
