@@ -49,7 +49,8 @@ def plot_segmentation_images(
         desc="Generating Segmentation Images...",
         leave=False,
     ):
-        image = PIL.Image.open(image_path).convert("RGB")
+        image = np.load(image_path).astype(np.uint8)
+        image = Image.fromarray(image)
         image = image_transform(image)
         if not isinstance(image, np.ndarray):
             image = image.numpy()
