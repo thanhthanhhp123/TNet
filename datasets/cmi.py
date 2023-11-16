@@ -64,7 +64,7 @@ class CMIDataset(torch.utils.data.Dataset):
         image = self.transform_img(image)
 
         if self.split == DatasetSplit.TEST and mask_path is not None:
-            mask = np.load(mask_path)
+            mask = np.load(mask_path).astype(np.uint8)
             mask = PIL.Image.fromarray(mask)
             mask = self.transform_mask(mask)
         else:
