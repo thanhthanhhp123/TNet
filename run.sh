@@ -16,7 +16,7 @@ net \
 --target_embed_dimension 1536 \
 --patchsize 3 \
 --meta_epochs 5 \
---embedding_size 65 \
+--embedding_size 60 \
 --gan_epochs 2 \
 --noise_std 0.015 \
 --dsc_hidden 1024 \
