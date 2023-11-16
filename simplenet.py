@@ -752,3 +752,7 @@ class PatchMaker:
     #         image_transform=image_transform,
     #         mask_transform=mask_transform
     #     )
+
+if __name__ == '__main__':
+    simple = SimpleNet('cpu')
+    print(simple)
