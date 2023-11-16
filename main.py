@@ -14,6 +14,7 @@ import simplenet
 import utils
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.filterwarnings("ignore")
 
 LOGGER = logging.getLogger(__name__)
 
