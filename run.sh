@@ -2,11 +2,11 @@ datapath=/content/drive/MyDrive/Dataset
 datasets=('CMI')
 dataset_flags=($(for dataset in "${datasets[@]}"; do echo '-d '"${dataset}"; done))
 
-python /content/ThanhNet/main.py \
+python /content/TNet/main.py \
 --gpu 0 \
 --seed 0 \
---log_group simplenet_mvtec \
---log_project MVTecAD_Results \
+--log_group simplenet_mci \
+--log_project MCIAD_Results \
 --results_path results \
 --run_name run \
 net \
@@ -15,8 +15,8 @@ net \
 --pretrain_embed_dimension 1536 \
 --target_embed_dimension 1536 \
 --patchsize 3 \
---meta_epochs 3 \
---embedding_size 256 \
+--meta_epochs 5 \
+--embedding_size 65 \
 --gan_epochs 2 \
 --noise_std 0.015 \
 --dsc_hidden 1024 \
