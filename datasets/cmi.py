@@ -16,6 +16,7 @@ class CMIDataset(torch.utils.data.Dataset):
     def __init__(self,
                  source,
                  resize = 60,
+                 image_size = 65,
                  split = DatasetSplit.TRAIN,
                  train_val_split = 1.0,
                  rotate_degree = 0,
@@ -38,6 +39,7 @@ class CMIDataset(torch.utils.data.Dataset):
             transforms.RandomHorizontalFlip(h_flip_p),
             transforms.RandomVerticalFlip(v_flip_p),
             transforms.ColorJitter(brightness, contrast),
+            transforms.CenterCrop(image_size),
             transforms.ToTensor(),
             transforms.Normalize(IMAGE_MEAN, IMAGENET_STD)
         ]
@@ -46,6 +48,7 @@ class CMIDataset(torch.utils.data.Dataset):
         
         self.transform_mask = [
             transforms.Resize(resize),
+            transforms.CenterCrop(image_size),
             transforms.ToTensor()
         ]
         self.transform_mask = transforms.Compose(self.transform_mask)
