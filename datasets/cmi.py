@@ -28,6 +28,8 @@ class CMIDataset(torch.utils.data.Dataset):
                  scale = 0,
                  **kwargs):
         super().__init__()
+        self.transform_std = IMAGENET_STD
+        self.transform_mean = IMAGE_MEAN
         self.source = source
         self.split = split
         self.train_val_split = train_val_split

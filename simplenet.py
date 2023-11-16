@@ -651,7 +651,7 @@ class SimpleNet(torch.nn.Module):
             in_mean = np.array(
                 data.dataset.transform_mean
             ).reshape(-1, 1, 1)
-            image = data.dataset.transforms_img(image)
+            image = data.dataset.transform_img(image)
             img =  np.clip(
                 (image.numpy() * in_std + in_mean) * 255, 0, 255
             ).astype(np.uint8)
