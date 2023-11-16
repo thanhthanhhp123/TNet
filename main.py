@@ -223,7 +223,7 @@ def net(
 @click.option("--subdatasets", "-d", multiple=True, type=str, required=True)
 @click.option("--train_val_split", type=float, default=1, show_default=True)
 @click.option("--batch_size", default=2, type=int, show_default=True)
-@click.option("--num_workers", default=2, type=int, show_default=True)
+# @click.option("--num_workers", default=2, type=int, show_default=True)
 @click.option("--resize", default=60, type=int, show_default=True)
 @click.option("--imagesize", default=65, type=int, show_default=True)
 @click.option("--rotate_degrees", default=0, type=int)
@@ -244,7 +244,6 @@ def dataset(
     batch_size,
     resize,
     imagesize,
-    num_workers,
     rotate_degrees,
     translate,
     scale,
@@ -297,7 +296,6 @@ def dataset(
                 train_dataset,
                 batch_size=batch_size,
                 shuffle=True,
-                num_workers=num_workers,
                 prefetch_factor=2,
                 pin_memory=True,
             )
@@ -306,7 +304,6 @@ def dataset(
                 test_dataset,
                 batch_size=batch_size,
                 shuffle=False,
-                num_workers=num_workers,
                 prefetch_factor=2,
                 pin_memory=True,
             )
@@ -330,7 +327,6 @@ def dataset(
                     val_dataset,
                     batch_size=batch_size,
                     shuffle=False,
-                    num_workers=num_workers,
                     prefetch_factor=4,
                     pin_memory=True,
                 )
