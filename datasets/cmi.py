@@ -43,7 +43,6 @@ class CMIDataset(torch.utils.data.Dataset):
             transforms.ColorJitter(brightness, contrast),
             transforms.CenterCrop(image_size),
             transforms.ToTensor(),
-            transforms.Normalize(IMAGE_MEAN, IMAGENET_STD)
         ]
 
         self.transform_img = transforms.Compose(self.transform_img)

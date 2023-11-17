@@ -50,16 +50,16 @@ def plot_segmentation_images(
         leave=False,
     ):
         image = np.load(image_path).astype(np.uint8)
-        image = Image.fromarray(image)
-        image = image_transform(image)
+        # image = Image.fromarray(image)
+        # image = image_transform(image)
         if not isinstance(image, np.ndarray):
             image = image.numpy()
 
         if masks_provided:
             if mask_path is not None:
                 mask = np.load(mask_path).astype(np.uint8)
-                mask = Image.fromarray(mask)
-                mask = mask_transform(mask)
+                # mask = Image.fromarray(mask)
+                # mask = mask_transform(mask)
                 if not isinstance(mask, np.ndarray):
                     mask = mask.numpy()
             else:

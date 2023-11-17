@@ -338,9 +338,9 @@ class SimpleNet(torch.nn.Module):
             segmentations, masks_gt
         )
 
-        full_pixel_auroc = pixel_scores["auroc"]
+        # full_pixel_auroc = pixel_scores["auroc"]
         
-        return auroc, full_pixel_auroc
+        return auroc
     
     def _evaluate(self, test_data, scores, segmentations, features, labels_gt, masks_gt):
         
