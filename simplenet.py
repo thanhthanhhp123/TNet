@@ -116,7 +116,7 @@ class SimpleNet(torch.nn.Module):
         dsc_hidden=None, # 1024
         dsc_margin=.8, # .5
         dsc_lr=0.0002,
-        train_backbone=False,
+        train_backbone=True,
         auto_noise=0,
         cos_lr=False,
         lr=1e-3,
@@ -452,7 +452,8 @@ class SimpleNet(torch.nn.Module):
         
         return best_record
             
-
+    def _train_backbone(self, input_data):
+        pass
     def _train_discriminator(self, input_data):
         """Computes and sets the support features for SPADE."""
         _ = self.forward_modules.eval()
