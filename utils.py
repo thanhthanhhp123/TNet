@@ -58,8 +58,8 @@ def plot_segmentation_images(
         if masks_provided:
             if mask_path is not None:
                 mask = np.load(mask_path).astype(np.uint8)
-                # mask = Image.fromarray(mask)
-                # mask = mask_transform(mask)
+                mask = Image.fromarray(mask)
+                mask = mask_transform(mask)
                 if not isinstance(mask, np.ndarray):
                     mask = mask.numpy()
             else:
@@ -70,7 +70,7 @@ def plot_segmentation_images(
         savename = os.path.join(savefolder, savename)
         # np.save(savename + "_segmentation.npy", segmentation)
         f, axes = plt.subplots(1, 2 + int(masks_provided))
-        axes[0].imshow(image.transpose(1, 2, 0))
+        axes[0].imshow(image)
         axes[1].imshow(mask.transpose(1, 2, 0))
         axes[2].imshow(segmentation, cmap = 'gray')
         f.set_size_inches(3 * (2 + int(masks_provided)), 3)
