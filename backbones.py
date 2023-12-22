@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
-
+from torchsummary import summary
+import torchvision
 from torch import Tensor
 from typing import Type
 from torchvision.models import wide_resnet50_2
@@ -117,5 +118,6 @@ class ResNet18(nn.Module):
         return x
 
 if __name__ == '__main__':
-    model = ResNet18()
-    print(model)
+    import tensorflow as tf
+    model = tf.keras.applications.ResNet18()
+    print(model.summary())
