@@ -118,6 +118,5 @@ class ResNet18(nn.Module):
         return x
 
 if __name__ == '__main__':
-    import tensorflow as tf
-    model = tf.keras.applications.ResNet18()
-    print(model.summary())
+    model = ResNet18()
+    summary(model, (1, 80, 57))

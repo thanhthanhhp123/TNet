@@ -10,14 +10,14 @@ python /content/TNet/main.py \
 --results_path results \
 --run_name run \
 net \
+-le layer1 \
 -le layer2 \
--le layer3 \
 --pretrain_embed_dimension 1536 \
 --target_embed_dimension 1536 \
 --patchsize 3 \
---meta_epochs 160 \
+--meta_epochs 60 \
 --embedding_size 60 \
---gan_epochs 4 \
+--gan_epochs 5 \
 --noise_std 0.015 \
 --dsc_hidden 1024 \
 --dsc_layers 2 \
